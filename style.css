@@ -1,0 +1,34 @@
+body {
+  background-color: #3a9efc;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: "Unbounded", cursive;
+  font-weight: 500;
+  font-size: 4em;
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+  font-family: "Unbounded", cursive;
+  font-weight: 500;
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: "Unbounded", cursive;
+  font-weight: 400;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3a9efc;
+  color: white;
+  text-align: center;
+  font-family: "Unbounded", cursive;
+}

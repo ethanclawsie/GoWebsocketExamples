@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Websocket Examples</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Santa Clara Weather</h1>
+    <h2><span id="weather"></span></h2>
+    <h3><span id="lastupdated"></span></h3>
+    <h1>ISS Data</h1>
+    <h2><span id="iss"></span></h2>
+    <h3><span id="lastupdated"></span></h3>
+    <h2>This site provides examples of how websockets can be used.</h2>
+    <div class="footer">
+      <p id="footer"></p>
+    </div>
+
+    <script>
+      let socket = new WebSocket("ws://localhost:8080/ws");
+      document.getElementById("footer").innerHTML = "Attempting Connection";
+
+      socket.onopen = () => {
+        document.getElementById("footer").innerHTML = "Connected";
+      };
+
+      socket.onclose = (event) => {
+        document.getElementById("footer").innerHTML =
+          "Disconnected from Server";
+      };
+
+      socket.onerror = (error) => {
+        document.getElementById("footer").innerHTML = "Socket Error: " + error;
+      };
+
+      socket.onmessage = function (event) {
+        let response = event.data;
+        const data = JSON.parse(response);
+        const weather = data.Weather;
+        const updated = data.Updated;
+        const iss = data.ISS;
+        document.getElementById("weather").innerHTML = weather;
+        document.getElementById("lastupdated").innerHTML =
+          "Last Updated:" + updated;
+        document.getElementById("iss").innerHTML = iss;
+      };
+    </script>
+  </body>
+</html>
