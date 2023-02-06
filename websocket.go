@@ -88,7 +88,6 @@ func getWeatherData() string {
 	var result map[string]interface{}
 	json.Unmarshal([]byte(data), &result)
 	tempF := result["current"].(map[string]interface{})["temp_f"]
-
 	localTime := result["location"].(map[string]interface{})["localtime"]
 	return fmt.Sprintf("Temperature: %v Last Updated: %v", tempF, localTime)
 }
