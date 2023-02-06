@@ -1,3 +1,3 @@
 # GoWebsocketExamples
 
-<img src="images/screenshot.png">
+<img src="images/image.png">
