@@ -38,7 +38,7 @@ Make sure to insert your API keys for WeatherAPI and Open Notify API in the `get
 
 ```go
 key := "Insert API key here"
-
+```
 ## WebSocket Client
 
 A WebSocket client is included in the HTML file (`index.html`) provided in the code. It establishes a connection to the WebSocket server running on `ws://localhost:8080/ws`.
@@ -73,10 +73,10 @@ A WebSocket client is included in the HTML file (`index.html`) provided in the c
     document.getElementById("iss").innerHTML = iss;
   };
 </script>
+```
 
 ## Screenshot
 
 ![Screenshot 1](images/image.png)
-
 
 
